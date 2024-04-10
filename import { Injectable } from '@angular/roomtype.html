@@ -1,0 +1,16 @@
+<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+  <!-- Add form fields for fromDate, toDate, branchId, roomId, and visitorDetails -->
+  
+  <mat-form-field>
+    <mat-label>Room Type</mat-label>
+    <mat-select formControlName="roomTypeId" required>
+      <mat-option *ngFor="let roomType of roomTypes" [value]="roomType.id">
+        {{ roomType.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Add buttons to add or remove visitors if needed -->
+
+  <button mat-raised-button color="primary" type="submit">Book Now</button>
+</form>
